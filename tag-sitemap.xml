@@ -9,15 +9,29 @@
     </url>
 
     <url>
-        <loc>http://travelchu.com/tags/iOS/</loc>
+        <loc>http://travelchu.com/tags/UIView/</loc>
         <lastmod>2016-01-07T04:53:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://travelchu.com/tags/UIView/</loc>
-        <lastmod>2016-01-07T04:53:01.000Z</lastmod>
+        <loc>http://travelchu.com/tags/Reuseable-View/</loc>
+        <lastmod>2016-01-08T03:28:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://travelchu.com/tags/xib/</loc>
+        <lastmod>2016-01-08T03:28:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://travelchu.com/tags/iOS/</loc>
+        <lastmod>2016-01-08T03:28:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
