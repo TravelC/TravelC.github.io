@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录技术点滴]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://travelchu.com/"/>
-  <updated>2016-01-21T02:28:08.000Z</updated>
+  <updated>2016-01-21T02:29:38.000Z</updated>
   <id>http://travelchu.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://travelchu.com/2016/01/21/fixKindleWifiIssue/"/>
     <id>http://travelchu.com/2016/01/21/fixKindleWifiIssue/</id>
     <published>2016-01-21T01:08:48.000Z</published>
-    <updated>2016-01-21T02:28:08.000Z</updated>
-    <content type="html"><![CDATA[<p>最近遇到了Kindle连接WiFi总是提示</p><blockquote><p>“您正在连接的WiFi网络要求您在访问互联网之前先登录。您是否希望跳转至网页浏览器进行登录：xxxxx？”</p></blockquote><a id="more"></a><p><img src="/7xpujh.com1.z0.glb.clouddn.com/FsYojJEZNrL3s6xWF6toD280fGtY" alt="kindleWifi"></p><p>点击取消则断开WiFi，点确定跳转到网页可以上网，但回到主页进行同步又跳出这个提示，无限循环了。</p><p>一番Google和尝试，最终找到的有效方案是：</p><ol><li>新建一个名为“WIFI_NO_NET_PROBE”的文件，没有后缀名，不需要填内容。</li><li>Kindle以磁盘方式连接电脑。</li><li>拷贝这个文件到Kindle磁盘的根目录。</li><li>弹出磁盘，重新连接WiFi即可。</li></ol><p>希望能帮到有类似问题的朋友。</p><p>点击取消则断开WiFi，点确定跳转到网页可以上网，但回到主页进行同步又跳出这个提示，无限循环了。</p><p>一番Google和尝试，最终找到的有效方案是：</p><ol><li>新建一个名为“WIFI_NO_NET_PROBE”的文件，没有后缀名，不需要填内容。</li><li>Kindle以磁盘方式连接电脑。</li><li>拷贝这个文件到Kindle磁盘的根目录。</li><li>弹出磁盘，重新连接WiFi即可。</li></ol><p>希望能帮到有类似问题的朋友。</p>]]></content>
+    <updated>2016-01-21T02:29:38.000Z</updated>
+    <content type="html"><![CDATA[<p>最近遇到了Kindle连接WiFi总是提示</p><blockquote><p>“您正在连接的WiFi网络要求您在访问互联网之前先登录。您是否希望跳转至网页浏览器进行登录：xxxxx？”</p></blockquote><a id="more"></a><p><img src="http://7xpujh.com1.z0.glb.clouddn.com/FsYojJEZNrL3s6xWF6toD280fGtY" alt="kindleWifi"></p><p>点击取消则断开WiFi，点确定跳转到网页可以上网，但回到主页进行同步又跳出这个提示，无限循环了。</p><p>一番Google和尝试，最终找到的有效方案是：</p><ol><li>新建一个名为“WIFI_NO_NET_PROBE”的文件，没有后缀名，不需要填内容。</li><li>Kindle以磁盘方式连接电脑。</li><li>拷贝这个文件到Kindle磁盘的根目录。</li><li>弹出磁盘，重新连接WiFi即可。</li></ol><p>希望能帮到有类似问题的朋友。</p><p>点击取消则断开WiFi，点确定跳转到网页可以上网，但回到主页进行同步又跳出这个提示，无限循环了。</p><p>一番Google和尝试，最终找到的有效方案是：</p><ol><li>新建一个名为“WIFI_NO_NET_PROBE”的文件，没有后缀名，不需要填内容。</li><li>Kindle以磁盘方式连接电脑。</li><li>拷贝这个文件到Kindle磁盘的根目录。</li><li>弹出磁盘，重新连接WiFi即可。</li></ol><p>希望能帮到有类似问题的朋友。</p>]]></content>
     <summary type="html">
     <![CDATA[<p>最近遇到了Kindle连接WiFi总是提示</p><blockquote><p>“您正在连接的WiFi网络要求您在访问互联网之前先登录。您是否希望跳转至网页浏览器进行登录：xxxxx？”</p></blockquote>]]>
     
