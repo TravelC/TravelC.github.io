@@ -16,6 +16,13 @@
     </url>
 
     <url>
+        <loc>http://travelchu.com/tags/iOS/</loc>
+        <lastmod>2016-01-19T03:51:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://travelchu.com/tags/Reuseable-View/</loc>
         <lastmod>2016-01-19T03:51:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
 
     <url>
         <loc>http://travelchu.com/tags/xib/</loc>
-        <lastmod>2016-01-19T03:51:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://travelchu.com/tags/iOS/</loc>
         <lastmod>2016-01-19T03:51:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
