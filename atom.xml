@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录技术点滴]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://travelchu.com/"/>
-  <updated>2016-03-14T07:57:56.000Z</updated>
+  <updated>2016-03-14T08:00:06.000Z</updated>
   <id>http://travelchu.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title><![CDATA[理解JSBridge]]></title>
     <link href="http://travelchu.com/2016/03/14/%E7%90%86%E8%A7%A3JSBridge/"/>
     <id>http://travelchu.com/2016/03/14/理解JSBridge/</id>
-    <published>2016-03-14T07:57:56.000Z</published>
-    <updated>2016-03-14T07:57:56.000Z</updated>
+    <published>2016-03-14T08:00:26.000Z</published>
+    <updated>2016-03-14T08:00:06.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u7406_u89E3JSBridge"><a href="#u7406_u89E3JSBridge" class="headerlink" title="理解JSBridge"></a>理解JSBridge</h1><pre><code>随着HTML5的不断普及及优化，其在移动端开发的应用也越来越多，在开发者我们经常需要web和native进行交互，也就是要用到经常听到的“JSBridge”。这里我就自己的理解及实践，讲一下什么是JSBridge。
 
 有些朋友听到JSBridge，会觉得是个蛮高大上的东西，好像很厉害很复杂的样子，有了它web和native都能交互了呢。其实并非如此，相信我，JSBridge真的是一个非常非常简单的东西。
@@ -54,6 +54,14 @@
     <summary type="html">
     <![CDATA[<h1 id="u7406_u89E3JSBridge"><a href="#u7406_u89E3JSBridge" class="headerlink" title="理解JSBridge"></a>理解JSBridge</h1><pre><code>随着HTML5的不断普及]]>
     </summary>
+    
+      <category term="JSBridge" scheme="http://travelchu.com/tags/JSBridge/"/>
+    
+      <category term="iOS" scheme="http://travelchu.com/tags/iOS/"/>
+    
+      <category term="web" scheme="http://travelchu.com/tags/web/"/>
+    
+      <category term="iOS" scheme="http://travelchu.com/categories/iOS/"/>
     
   </entry>
   
