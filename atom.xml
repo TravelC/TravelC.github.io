@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录技术点滴]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://travelchu.com/"/>
-  <updated>2016-05-13T06:49:41.000Z</updated>
+  <updated>2017-03-14T09:45:01.000Z</updated>
   <id>http://travelchu.com/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[防止UIButton快速多次点击导致事件多次触发]]></title>
+    <link href="http://travelchu.com/2017/03/14/%E9%98%B2%E6%AD%A2UIButton%E5%BF%AB%E9%80%9F%E5%A4%9A%E6%AC%A1%E7%82%B9%E5%87%BB%E5%AF%BC%E8%87%B4%E4%BA%8B%E4%BB%B6%E5%A4%9A%E6%AC%A1%E8%A7%A6%E5%8F%91/"/>
+    <id>http://travelchu.com/2017/03/14/防止UIButton快速多次点击导致事件多次触发/</id>
+    <published>2017-03-14T09:39:26.000Z</published>
+    <updated>2017-03-14T09:45:01.000Z</updated>
+    <content type="html"><![CDATA[<p>项目中遇到了一个Button快速多次点击导致UIControlEventTouchUpInside多次连续触发的问题，这里记录一下解决方案，代码很简单，一个UIButton的分类，当然也可以做UIControl的分类。<br>UIButton+RepeatTapHandle.h</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIButton</span> (<span class="title">RepeatTapHandle</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure><p>UIButton+RepeatTapHandle.m</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"UIButton+RepeatTapHandle.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIButton</span> (<span class="title">RepeatTapHandle</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)sendAction:(SEL)action to:(nullable <span class="keyword">id</span>)target forEvent:(nullable <span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">  [<span class="keyword">super</span> sendAction:action to:target forEvent:event];</span><br><span class="line">  [[<span class="built_in">UIApplication</span> sharedApplication] beginIgnoringInteractionEvents];</span><br><span class="line">  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(<span class="number">0.2</span> * <span class="built_in">NSEC_PER_SEC</span>)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] endIgnoringInteractionEvents];</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>项目中遇到了一个Button快速多次点击导致UIControlEventTouchUpInside多次连续触发的问题，这里记录一下解决方案，代码很简单，一个UIButton的分类，当然也可以做UIControl的分类。<br>UIButton+RepeatTapHandle.h</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIButton</span> (<span class="title">RepeatTapHandle</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure><p>UIButton+RepeatTapHandle.m</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"UIButton+RepeatTapHandle.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIButton</span> (<span class="title">RepeatTapHandle</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)sendAction:(SEL)action to:(nullable <span class="keyword">id</span>)target forEvent:(nullable <span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">  [<span class="keyword">super</span> sendAction:action to:target forEvent:event];</span><br><span class="line">  [[<span class="built_in">UIApplication</span> sharedApplication] beginIgnoringInteractionEvents];</span><br><span class="line">  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(<span class="number">0.2</span> * <span class="built_in">NSEC_PER_SEC</span>)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] endIgnoringInteractionEvents];</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="UIButton" scheme="http://travelchu.com/tags/UIButton/"/>
+    
+      <category term="iOS" scheme="http://travelchu.com/tags/iOS/"/>
+    
+      <category term="多次点击" scheme="http://travelchu.com/tags/%E5%A4%9A%E6%AC%A1%E7%82%B9%E5%87%BB/"/>
+    
+      <category term="iOS" scheme="http://travelchu.com/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[理解JSBridge]]></title>
@@ -337,21 +359,6 @@
     </summary>
     
       <category term="AppStore(iOS)" scheme="http://travelchu.com/categories/AppStore-iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[快速创建支持缩放的图片查看视图（iOS）]]></title>
-    <link href="http://travelchu.com/2014/03/16/image-view-scale/"/>
-    <id>http://travelchu.com/2014/03/16/image-view-scale/</id>
-    <published>2014-03-16T04:49:42.000Z</published>
-    <updated>2016-01-07T04:52:03.000Z</updated>
-    <content type="html"><![CDATA[<ol><li>创建一个UIScrollView，代码或者IB都可以。</li></ol><p>2.在创建的ScrollView上添加一个UIImageView，用来显示图片和进行缩放。</p><p>3.设置scrollview的属性(maximumZoomScale和minimumZoomScale)：</p><p>这里举例1和10.</p><p>代码：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scrollView<span class="variable">.minimumZoomScale</span> = <span class="number">1.0</span>;</span><br><span class="line">scrollView<span class="variable">.maximumZoomScale</span> = <span class="number">10.0</span>;</span><br></pre></td></tr></table></figure></p><p>IB：</p><img src="http://7xpujh.com1.z0.glb.clouddn.com/static/images/QQ20140806-1@2x-229x300.png"> <img src="http://7xpujh.com1.z0.glb.clouddn.com/static/images/QQ20140806-1@2x.png"><p>4.设置scrollview的代理并实现如下代理方法：</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span> )viewForZoomingInScrollView:(<span class="built_in">UIScrollView</span> )scrollView &#123;</span><br><span class="line">       returnself<span class="variable">.imageView</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<ol><li>创建一个UIScrollView，代码或者IB都可以。</li></ol><p>2.在创建的ScrollView上添加一个UIImageView，用来显示图片和进行缩放。</p><p>3.设置scrollview的属性(maximumZoomScale和minim]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://travelchu.com/categories/iOS/"/>
     
   </entry>
   
