@@ -58,6 +58,13 @@
     </url>
 
     <url>
+        <loc>http://travelchu.com/tags/iOS/</loc>
+        <lastmod>2017-03-14T09:45:01.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://travelchu.com/tags/UIButton/</loc>
         <lastmod>2017-03-14T09:45:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,13 +73,6 @@
 
     <url>
         <loc>http://travelchu.com/tags/%E5%A4%9A%E6%AC%A1%E7%82%B9%E5%87%BB/</loc>
-        <lastmod>2017-03-14T09:45:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://travelchu.com/tags/iOS/</loc>
         <lastmod>2017-03-14T09:45:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
